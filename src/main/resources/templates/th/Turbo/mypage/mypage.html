@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주식회사 터보테크놀로지</title>
+    <link rel="stylesheet" href="../public/css/reset.css" />
+    <link rel="stylesheet" href="../public/css/common.css" />
+    <script
+      type="text/javascript"
+      src="../public/js/jquery-3.7.1.min.js"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="../public/js/slick.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../public/js/slick-theme.css"
+    />
+    <script type="text/javascript" src="../public/js/slick.min.js"></script>
+    <script type="text/javascript" src="../public/js/video.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".section-productList-wrap").slick({
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: false,
+          variableWidth: true,
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-main-container br">
+          <div class="header-main-wrap bor">
+            <a href="../index.html">
+              <img
+                src="../public/images/logo/TT_logo.png"
+                alt="logo"
+                class="header-main-logo by"
+              />
+            </a>
+
+            <ul class="header-main-menu by">
+              <li class="activated-menu">
+                <a href="../company/company.html">회사소개</a>
+              </li>
+              <li>
+                <a href="../coretech/coretech.html">핵심기술</a>
+              </li>
+              <li>
+                <a href="../product/product.html">제품소개</a>
+              </li>
+              <li>
+                <a href="../energysave/energysave.html"
+                  >에너지 절감 주요 적용 사업</a
+                >
+              </li>
+              <li>
+                <a href="../contact/contact.html">Contact</a>
+              </li>
+              <li>
+                <a href="../membership/membership.html">멤버쉽서비스</a>
+              </li>
+            </ul>
+
+            <div class="header-main-login by">
+              <a href="../login/login.html">LOGIN</a>
+              <p>|</p>
+              <div class="header-main-lang">
+                <p>KR</p>
+                <img
+                  src="../public/images/icon/arrow_under.png"
+                  alt="language"
+                  width="8px"
+                  height="6px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="header-sub-container br">
+          <div class="header-sub-wrap bor">
+            <ul class="header-sub-menu by">
+              <li><a href="ceo.html">CEO 인사말</a></li>
+              <li>
+                <a href="companyinfo.html">회사소개</a>
+              </li>
+              <li><a href="people.html">조직도</a></li>
+            </ul>
+          </div>
+        </div> -->
+      </header>
+
+      <section class="wb3">
+        <div class="section-company-container br">
+          <div class="section-company-wrap bor">
+            <div
+              href="ceo.html"
+              class="section-company-ceo-topVisual"
+              style="background-image: url('../../public/images/company/ceo.png')"
+            >
+              <span>마이 페이지</span>
+              <!-- <span>CEO Greetings</span> -->
+            </div>
+            <div
+              class="section-company-ceo-greeting"
+              style="background-color: #4f4f4f; padding: 32px"
+            >
+              <p class="section-company-ceo-greeting-title">연락처</p>
+
+              <p>이름: <span>홍길동</span></p>
+              <p>전화번호: <span>010-1234-4565</span></p>
+              <p>이메일: <span>abc@abc.com</span></p>
+              <p>
+                귀하의 정보는 터보테크놀로지의 고객 관리 목적으로만 사용되며
+                다른 용도로는 절대 사용되지 않습니다.
+              </p>
+              <div class="mypage_button">
+                <button class="mypage_modify">수정하기</button>
+                <button class="mypage_exit">탈퇴</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="">
+        <div class="footer-container br">
+          <div class="footer-wrap br">
+            <div class="footer-up">
+              <span class="footer-info">
+                <p style="color: white">개인정보처리방침</p>
+                <p>|</p>
+                <p>이용약관</p>
+              </span>
+              <span
+                ><p class="footer">
+                  Copyright © 2023 Turbo Technology Co., LTD. All Rights
+                  Reserved.
+                </p></span
+              >
+            </div>
+            <div class="footer-down">
+              <p class="footer">
+                Address - 경기 화성시 동탄대로21길 10, 더퍼스트타워1차 501호
+              </p>
+              <p>Tel - 031-374-0804</p>
+              <p>Fax - 031-374-0803</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

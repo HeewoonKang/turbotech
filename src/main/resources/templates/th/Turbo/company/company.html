@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--<div th:replace="turboFragment/head :: head"></div>
+  <meta charset="UTF-8">-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>주식회사 터보테크놀로지</title>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/common.css" />
+  <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/js/slick.css" />
+  <link rel="stylesheet" type="text/css" href="/js/slick-theme.css" />
+  <script type="text/javascript" src="/js/slick.min.js"></script>
+
+  <style>
+    .slick-arrow {
+      background: gray !important;
+    }
+
+    .slick-prev {
+      left: 24px !important;
+      z-index: 2;
+    }
+
+    .slick-next {
+      right: 24px !important;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!--<div th:replace="turboFragment/header :: header"></div>-->
+  <header>
+    <div class="header-main-container br">
+      <div class="header-main-wrap bor">
+        <a href="/">
+          <img src="/images/logo/TT_logo.png" alt="logo" class="header-main-logo by" />
+        </a>
+
+        <ul class="header-main-menu by">
+          <li><a href="/company">회사소개</a></li>
+          <li><a href="/coretech">핵심기술</a></li>
+          <li><a href="/product">제품소개</a></li>
+          <li>
+            <a href="/energysave">에너지 절감 주요 적용 사업</a>
+          </li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/membership">멤버쉽서비스</a></li>
+        </ul>
+
+        <div class="header-main-login by" id="authLink">
+          <div id="loginLinkContainer">
+            <a href="/user/login">LOGIN</a>
+          </div>
+          <p>|</p>
+          <div class="header-main-lang">
+            <p>KR</p>
+            <img src="/images/icon/arrow_under.png" alt="language" width="8px" height="6px" />
+          </div>
+        </div>
+        <div class="mobile-header-menu">
+          <span class="mobile-header-menu-bar mobile-header-menu-bar--top"></span>
+          <span class="mobile-header-menu-bar mobile-header-menu-bar--mid"></span>
+          <span class="mobile-header-menu-bar mobile-header-menu-bar--bot"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+      <section class="wb3">
+        <div class="section-company-container br">
+          <div class="section-company-wrap bor">
+            <a
+              href="../../../../static/html/company/ceo.html"
+              class="section-company-item"
+              style="background-image: url('/images/company/ceo.png')"
+            >
+              <p class="typo_title">CEO 인사말</p>
+            </a>
+
+            <a
+              href="../../../../static/html/company/companyinfo.html"
+              class="section-company-item"
+              style="
+                background-image: url('/images/company/companyinfo.png');
+              "
+            >
+              <p class="typo_title">회사 소개</p>
+            </a>
+
+            <a
+              href="../../../../static/html/company/people.html"
+              class="section-company-item"
+              style="
+                background-image: url('/images/company/people.png');
+              "
+            >
+              <p class="typo_title">조직도</p>
+            </a>
+          </div>
+        </div>
+      </section>
+  <footer class="">
+    <div class="footer-container br">
+      <div class="footer-wrap br">
+        <div class="footer-up">
+              <span class="footer-info">
+                <p style="color: white">개인정보처리방침</p>
+                <p>|</p>
+                <p>이용약관</p>
+              </span>
+          <span><p class="footer">Copyright © 2023 Turbo Technology Co., LTD. All Rights Reserved.</p></span>
+        </div>
+        <div class="footer-down">
+          <p class="footer">Address - 경기 화성시 동탄대로21길 10, 더퍼스트타워1차 501호</p>
+          <p>Tel - 031-374-0804</p>
+          <p>Fax - 031-374-0803</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--<div th:replace="turboFragment/footer :: footer"></div>-->
+
+  <nav class="side-bar off">
+    <div class="side-bar-login-section">
+      <a href="">Login</a>
+    </div>
+    <div class="side-bar-lang-section">
+      <span>KOR</span>
+      <span>ENG</span>
+      <span>CHN</span>
+    </div>
+    <div class="side-bar-sub-section">
+      <div>
+        <p>회사소개</p>
+        <ul>
+          <li>
+            <a href="#">CEO 인사말</a>
+          </li>
+          <li>
+            <a href="#">회사소개</a>
+          </li>
+          <li>
+            <a href="#">조직도</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>핵심기술</p>
+        <ul>
+          <li>
+            <a href="#">UHEPM Motor</a>
+          </li>
+          <li>
+            <a href="#">NBW Air Foil Bearing</a>
+          </li>
+          <li>
+            <a href="#">Supersonic Impeller</a>
+          </li>
+          <li>
+            <a href="#">Dual Air Cooling System</a>
+          </li>
+          <li>
+            <a href="#">Auto Surge Protection System</a>
+          </li>
+          <li>
+            <a href="#">Internal Cooling Air System</a>
+          </li>
+          <li>
+            <a href="#">Auto Surge Protection SystemAnti-Explosive Turbo Motor</a>
+          </li>
+          <li>
+            <a href="#">Ambient Lighting</a>
+          </li>
+          <li>
+            <a href="#">SMART HMI</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>제품소개</p>
+        <ul>
+          <li>
+            <a href="#">WH Series 터보 컴프레서</a>
+          </li>
+          <li>
+            <a href="#">WL Series 터보 블로워</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>에너지 절감 주요 적용 사업</p>
+        <ul>
+          <li>
+            <a href="#">2차전지</a>
+          </li>
+          <li>
+            <a href="#">바이오케미컬</a>
+          </li>
+          <li>
+            <a href="#">반도체디스플레이</a>
+          </li>
+          <li>
+            <a href="#">석유화학</a>
+          </li>
+          <li>
+            <a href="#">식음료</a>
+          </li>
+          <li>
+            <a href="#">양조발효</a>
+          </li>
+          <li>
+            <a href="#">수처리/환경</a>
+          </li>
+          <li>
+            <a href="#">발전</a>
+          </li>
+          <li>
+            <a href="#">금속/제강/제련</a>
+          </li>
+          <li>
+            <a href="#">조선선박</a>
+          </li>
+          <li>
+            <a href="#">광업</a>
+          </li>
+          <li>
+            <a href="#">시멘트/분말/분체업</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>Contact</p>
+        <ul>
+          <li>
+            <a href="#">견적문의</a>
+          </li>
+          <li>
+            <a href="#">일반문의</a>
+          </li>
+          <li>
+            <a href="#">위치</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>멤버쉽서비스</p>
+        <ul>
+          <li>
+            <a href="#">딜러/에이전트 서비스 비디오</a>
+          </li>
+          <li>
+            <a href="#">고객서비스비디오</a>
+          </li>
+          <li>
+            <a href="#">갤러리</a>
+          </li>
+          <li>
+            <a href="#">미디어</a>
+          </li>
+          <li>
+            <a href="#">뉴스레터</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+</body>
+<!--</body>-->
+<script type="text/javascript">
+  $(document).ready(function () {
+    $(".section-productList-wrap").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: false,
+    });
+
+    $(".slick-arrow").click(function (e) {
+      $('[aria-hidden="false"]').each(function () {
+        var titleElement = $(this).find(".section-productList_index-info-title").text();
+        $(".section-productList_index_navi > div").each(function () {
+          if ($(this).text().trim() === titleElement) {
+            $(this).siblings().removeClass();
+            $(this).addClass("activated_index_navi");
+          }
+        });
+      });
+    });
+
+    $(".mobile-header-menu").click(function () {
+      if ($(this).hasClass("on")) {
+        $(this).removeClass("on");
+        $(".mobile-header-menu-bar--mid").show(300);
+        $(".mobile-header-menu-bar--top").removeClass("on");
+        $(".mobile-header-menu-bar--bot").removeClass("on");
+        $("body").removeClass("off");
+        $(".side-bar").addClass("off");
+      } else {
+        $(this).addClass("on");
+        $(".mobile-header-menu-bar--mid").hide(300);
+        $(".mobile-header-menu-bar--top").addClass("on");
+        $(".mobile-header-menu-bar--bot").addClass("on");
+
+        $("body").addClass("off");
+        $(".side-bar").removeClass("off");
+      }
+    });
+  });
+</script>
+</html>

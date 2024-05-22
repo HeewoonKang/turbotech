@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 상세보기</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>게시글 상세</h1>
+<div>
+    <h2 id="title">제목</h2>
+    <p id="content">내용</p>
+    <p>작성자: <span id="nickName">별명</span></p>
+    <script>
+        $(document).ready(function() {
+            var id = window.location.pathname.split('/').pop();
+            $.ajax({
+                url: '/api/post/get/' + id,
+                type: 'GET',
+                success: function(response) {
+                    console.log(response);
+                    $('#title').text(response.title);
+                    $('#content').text(response.content);
+                    $('#nickName').text(response.user.nickName);
+                },
+                error: function(error) {
+                    console.log(error);
+                    console.error('에러 처리 in getPost:', error);
+                }
+            });
+        });
+    </script>
+</div>
+</body>
+</html>

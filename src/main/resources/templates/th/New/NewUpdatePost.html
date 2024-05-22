@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 수정</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+</head>
+<body>
+<div class="container mt-3">
+    <form>
+        <input type="hidden" id="id" th:value="${post.id}">
+        <div class="mb-3">
+            <label for ="title">Title:</label>
+            <input type="text" class="form-control" id="title" th:value="${post.title}" placeholder="Enter title">
+        </div>
+        <div class="mb-3">
+            <label for="content">Content:</label>
+            <textarea class="form-control" rows="5" id="content" th:text="${post.content}"></textarea>
+        </div>
+    </form>
+
+    <button id="btn-update" class="btn btn-secondary">포스트 수정</button>
+</div>
+<script src="/js/require/post.js"></script>
+</body>
+</html>

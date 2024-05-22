@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>주식회사 터보테크놀로지</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <script type="text/javascript" src="/js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/js/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/js/slick-theme.css" />
+    <script type="text/javascript" src="/js/slick.min.js"></script>
+    <script type="text/javascript" src="/js/video.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".section-productList-wrap").slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: false,
+                variableWidth: true,
+            });
+        });
+    </script>
+</head>
+<body style="display:none;" id="bodyContent">
+<div class="container">
+    <header>
+        <div class="header-main-container br">
+            <div class="header-main-wrap bor">
+                <a href="/">
+                    <img
+                            src="/images/logo/TT_logo.png"
+                            alt="logo"
+                            class="header-main-logo by"
+                    />
+                </a>
+
+                <ul class="header-main-menu by">
+                    <li><a href="/html/company/company.html">회사소개</a></li>
+                    <li><a href="/html/coretech/coretech.html">핵심기술</a></li>
+                    <li><a href="/html/product/product.html">제품소개</a></li>
+                    <li>
+                        <a href="/html/energysave/energysave.html"
+                        >에너지 절감 주요 적용 사업</a
+                        >
+                    </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/membership/DealerAgent">멤버쉽서비스</a>
+                    </li>
+                </ul>
+
+                <div class="header-main-login by" id="authLink">
+                    <div id="loginLinkContainer">
+                        <a href="/user/login">LOGIN</a>
+                    </div>
+                    <p>|</p>
+                    <div class="header-main-lang">
+                        <p>KR</p>
+                        <img src="/images/icon/arrow_under.png" alt="language" width="8px" height="6px" />
+                    </div>
+                </div>
+                <div class="mobile-header-menu">
+                    <span class="mobile-header-menu-bar mobile-header-menu-bar--top"></span>
+                    <span class="mobile-header-menu-bar mobile-header-menu-bar--mid"></span>
+                    <span class="mobile-header-menu-bar mobile-header-menu-bar--bot"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-sub-container br">
+            <div class="header-sub-wrap bor">
+                <ul class="header-sub-menu by">
+                    <li><a href="/membership/DealerAgent">딜러/에이전트 서비스 비디오</a></li>
+                    <li><a href="/membership/Video">고객서비스비디오</a></li>
+                    <li><a href="/membership/Gallery">갤러리</a></li>
+                    <li><a href="/membership/Media">미디어</a></li>
+                    <li><a href="/membership/Newsletter">뉴스레터</a></li>
+                    <li id="adminTab" style="display: none;">
+                        <a href="/membership/Admin">유저 관리</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section style="background-color: white; z-index: -1">
+        <div class="section-basic-container br">
+            <div class="section-basic-wrap bor">
+                <p class="dealer_title">미디어 서비스</p>
+
+                <div class="dealer_container">
+                    <div class="dealer_header">
+                        <div class="query_header_left">
+                            <p th:text="'총 ' + ${totalPosts} + '건'"></p>
+                        </div>
+                        <div class="dealer_header_right">
+                            <div class="query_dropdown">
+                                <button class="query_dropbtn">전체</button>
+                                <div class="query_dropdown-content">
+                                    <a href="#" data-category="all">전체</a>
+                                    <a href="#" data-category="title">제목</a>
+                                    <a href="#" data-category="author">작성자</a>
+                                </div>
+                            </div>
+                            <input type="text" class="query_search_input" placeholder="입력해 주세요." />
+                            <button class="query_searchbtn">검색</button>
+                            <button class="query_create_btn" onclick="location.href='/membership/Media/insert'" style="display:none;">게시물 등록하기</button>
+                        </div>
+                    </div>
+                    <div class="dealer_content">
+                        <div th:each="media : ${posts}">
+                            <a th:href="@{/membership/Media/{id}(id=${media.id})}">
+                                <div class="dealer_content_image">
+                                    <img th:if="${media.imagePath}" th:src="@{/media/{imagePath}(imagePath=${media.imagePath})}" alt="language"
+                                         style="max-width: 100%; max-height: 100%; object-fit: contain;"/>
+                                </div>
+                                <div class="dealer_content_text">
+                                    <p class="dealer_content_text_title" th:text="${media.title}">Title Placeholder</p>
+                                    <p class="dealer_content_text_date" th:text="${#temporals.format(media.createAt, 'yyyyMMdd')}">Date Placeholder</p>
+                                    <p class="dealer_content_text_preview" th:utext="${media.content.length() > 30 ? #strings.substring(media.content, 0, 30) + '...' : media.content}">Preview Placeholder</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div style="text-align: center">
+                        <button class="query_more_btn" id="load">게시물 더보기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="">
+        <div class="footer-container br">
+            <div class="footer-wrap br">
+                <div class="footer-up">
+              <span class="footer-info">
+                <p style="color: white">개인정보처리방침</p>
+                <p>|</p>
+                <p>이용약관</p>
+              </span>
+                    <span><p class="footer">Copyright © 2023 Turbo Technology Co., LTD. All Rights Reserved.</p></span>
+                </div>
+                <div class="footer-down">
+                    <p class="footer">Address - 경기 화성시 동탄대로21길 10, 더퍼스트타워1차 501호</p>
+                    <p>Tel - 031-374-0804</p>
+                    <p>Fax - 031-374-0803</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <nav class="side-bar off">
+        <div class="side-bar-login-section">
+            <a href="">Login</a>
+        </div>
+        <div class="side-bar-lang-section">
+            <span>KOR</span>
+            <span>ENG</span>
+            <span>CHN</span>
+        </div>
+        <div class="side-bar-sub-section">
+            <div>
+                <p><a href="/html/company/company.html">회사소개</a></p>
+                <ul>
+                    <li>
+                        <a href="/html/company/ceo.html">CEO 인사말</a>
+                    </li>
+                    <li>
+                        <a href="/html/company/companyinfo.html">회사소개</a>
+                    </li>
+                    <li>
+                        <a href="/html/company/people.html">조직도</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <p><a href="/html/coretech/coretech.html">핵심기술</a></p>
+                <ul>
+                    <li>
+                        <a href="/html/coretech/uhepmmotor.html">UHEPM Motor</a>
+                    </li>
+                    <li>
+                        <a href="/html/coretech/nbwairfoilbearing.html">NBW Air Foil Bearing</a>
+                    </li>
+                    <li>
+                        <a href="/html/coretech/supersonicimpeller.html">Supersonic Impeller</a>
+                    </li>
+                    <li>
+                        <a href="/html/coretech/dualaircoolingsystem.html">Dual Air Cooling System</a>
+                    </li>
+                    <li>
+                        <a href="/html/coretech/autosurgeprotectionsystem.html">Auto Surge Protection System</a>
+                    </li>
+                    <li>
+                        <a href="/html/coretech/internalcoolingairsystem.html">Internal Cooling Air System</a>
+                    </li>
+                    <li>
+                        <a href="/html/coretech/anti-explosiveturbomotor.html">Anti-Explosive Turbo Motor</a>
+                    </li>
+                    <li>
+                        <a href="/html/coretech/ambientlighting.html">Ambient Lighting</a>
+                    </li>
+                    <li>
+                        <a href="/html/coretech/smarthmi.html">SMART HMI</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <p><a href="/html/product/product.html">제품소개</a></p>
+                <ul>
+                    <li>
+                        <a href="/html/product/WH-SERIES.html">WH Series 터보 컴프레서</a>
+                    </li>
+                    <li>
+                        <a href="/html/product/WL-SERIES.html">WL Series 터보 블로워</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <p><a href="/html/energysave/energysave.html"> 에너지 절감 주요 적용 사업</a></p>
+                <ul>
+                    <li>
+                        <a href="/html/energysave/2차전지.html">2차전지</a>
+                    </li>
+                    <li>
+                        <a href="/html/energysave/바이오케미컬.html">바이오케미컬</a>
+                    </li>
+                    <li>
+                        <a href="/html/energysave/반도체디스플레이.html">반도체디스플레이</a>
+                    </li>
+                    <li>
+                        <a href="/html/energysave/석유화학.html">석유화학</a>
+                    </li>
+                    <li>
+                        <a href="/html/energysave/식음료.html">식음료</a>
+                    </li>
+                    <li>
+                        <a href="/html/energysave/양조발효.html">양조발효</a>
+                    </li>
+                    <li>
+                        <a href="/html/energysave/수처리환경.html">수처리/환경</a>
+                    </li>
+                    <li>
+                        <a href="/html/energysave/발전.html">발전</a>
+                    </li>
+                    <li>
+                        <a href="/html/energysave/금속제강제련.html">금속/제강/제련</a>
+                    </li>
+                    <li>
+                        <a href="/html/energysave/조선선박.html">조선선박</a>
+                    </li>
+                    <li>
+                        <a href="/html/energysave/광업.html">광업</a>
+                    </li>
+                    <li>
+                        <a href="/html/energysave/시멘트분말분체.html">시멘트/분말/분체업</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <p><a href="/contact">Contact</a></p>
+                <ul>
+                    <li>
+                        <a href="/contact">견적문의</a>
+                    </li>
+                    <li>
+                        <a href="/html/contact/query_normal.html">일반문의</a>
+                    </li>
+                    <li>
+                        <a href="/html/contact/location.html">위치</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <p><a href="/membership/DealerAgent">멤버쉽서비스</a></p>
+                <ul>
+                    <li>
+                        <a href="/membership/DealerAgent">딜러/에이전트 서비스 비디오</a>
+                    </li>
+                    <li>
+                        <a href="/membership/Video">고객서비스비디오</a>
+                    </li>
+                    <li>
+                        <a href="/membership/Gallery">갤러리</a>
+                    </li>
+                    <li>
+                        <a href="/membership/Media">미디어</a>
+                    </li>
+                    <li>
+                        <a href="/membership/Newsletter">뉴스레터</a>
+                    </li>
+                    <li id="adminSideTab" style="display: none;">
+                        <a href="/membership/Admin">유저 관리</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+<script>
+    var username = localStorage.getItem('username');
+    if (username) {
+        document.getElementById('bodyContent').style.display = 'block';
+    } else {
+        alert("접근 권한이 없습니다.");
+        history.back();
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var userRole = localStorage.getItem('role');
+
+        // role 값이 'admin'이라면 버튼을 보여주고 아니면 숨김
+        if(userRole === 'ADMIN') {
+            $(".query_create_btn").show();
+        } else {
+            $(".query_create_btn").hide();
+        }
+
+        $(".mobile-header-menu").click(function () {
+            if ($(this).hasClass("on")) {
+                $(this).removeClass("on");
+                $(".mobile-header-menu-bar--mid").show(300);
+                $(".mobile-header-menu-bar--top").removeClass("on");
+                $(".mobile-header-menu-bar--bot").removeClass("on");
+                $("body").removeClass("off");
+                $(".side-bar").addClass("off");
+            } else {
+                $(this).addClass("on");
+                $(".mobile-header-menu-bar--mid").hide(300);
+                $(".mobile-header-menu-bar--top").addClass("on");
+                $(".mobile-header-menu-bar--bot").addClass("on");
+
+                $("body").addClass("off");
+                $(".side-bar").removeClass("off");
+            }
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var userRole = localStorage.getItem('role');
+        if (userRole === 'ADMIN') {
+            document.getElementById('adminTab').style.display = 'list-item';
+            document.getElementById('adminSideTab').style.display = 'list-item';
+
+        }
+    });
+</script>
+<script>
+    $(function() {
+        var selectedCategory = 'all';
+        var searchKeyword = '';
+        var currentPage = 0;
+        // 카테고리 설정
+        $(".query_dropdown-content a").click(function(e) {
+            e.preventDefault();
+            selectedCategory = $(this).data("category");
+            $(".query_dropbtn").first().text($(this).text());
+        });
+
+        // 게시물 띄우기
+        function renderPosts(posts, append = false) {
+            if (!append) {
+                $('.dealer_content').empty(); // 기존 게시물을 비워주고 잘라오기 위함
+            }
+
+            posts.forEach(function(media) {
+                var formattedDate = new Date(media.createAt).toISOString().split('T')[0].replace(/-/g,'');
+                var contentPreview = media.content.length > 30 ? media.content.substring(0, 30) + '...' : media.content;
+                var postHtml = `
+            <div class="dealer_content_item">
+                <a href="/membership/Media/${media.id}">
+                    <div class="dealer_content_image">
+                        <img src="/media/${media.imagePath}" alt="language" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                    </div>
+                    <div class="dealer_content_text">
+                        <p class="dealer_content_text_title" style="font-weight:bold;">${media.title}</p>
+                        <p class="dealer_content_text_date">${formattedDate}</p>
+                        <p class="dealer_content_text_preview">${contentPreview}</p>
+                    </div>
+                </a>
+            </div>
+        `;
+                $('.dealer_content').append(postHtml); // 게시물을 이제 붙임.
+            });
+        }
+        // 검색기능
+        function searchPosts(append = false) {
+            console.log("Current page before request: ", currentPage); // 현재 페이지 번호 로깅
+            $.ajax({
+                url: '/membership/Media/search',
+                type: 'GET',
+                data: {
+                    category: selectedCategory,
+                    keyword: searchKeyword,
+                    page: currentPage,
+                    size: 5
+                },
+                dataType: 'json',
+                success: function(response) {
+                    console.log("Data received for page: ", currentPage); // 요청한 페이지 번호 로깅
+                    console.log(response); // 서버 응답 로깅
+                    renderPosts(response.content, append);
+                    // currentPage++; // 현재 페이지 증가
+
+                    /*if (!response.last) {
+                        currentPage++;
+                    }*/
+                    if (response.last) {
+                        $('#load').hide();
+                    } else {
+                        $('#load').show();
+                    }
+
+                    $(".query_header_left p").text("총 " + response.totalPosts + "건");
+                },
+                error: function(xhr, status, error) {
+                    alert("An error occurred: " + error);
+                }
+            });
+        }
+
+        // 검색 버튼 클릭 이벤트
+        $(".query_searchbtn").click(function() {
+            searchKeyword = $(".query_search_input").val();
+            currentPage = 0;
+            searchPosts();
+        });
+
+        // 더 보기 버튼 클릭 이벤트
+        $("#load").click(function(e) {
+            e.preventDefault();
+            currentPage++;
+            searchPosts(true);
+        });
+    });
+</script>
+<script src="/js/require/user.js"></script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<head>
+    <title>인덱스</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        .pagination li {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>인덱스 페이지</h1>
+<div id="authLink">
+    <a href="/user/login">Login</a> | <a href="/user/signUp">Sign Up</a>
+</div>
+
+<section class="py-5">
+    <nav>
+        <form method="get" th:action="@{/post/search}">
+            <input name="title" placeholder="게시글 이름 검색" type="text">
+            <input type="submit" value="검색">
+        </form>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="post : ${posts}">
+                <td th:text="${post.id}"></td>
+                <td th:text="${post.title}"></td>
+                <td th:text="${post.user.nickName}"></td>
+                <td>
+                    <a th:href="@{/post/{id}(id=${post.id})}" class="btn btn-primary">상세보기</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pagination">
+                <li class="page-item" th:if="${!posts.first}" th:classappend="${posts.first ? 'disabled' : ''}">
+                    <a class="page-link" th:href="${'/post/?pageNo=' + (posts.number-1)}">이전</a>
+                </li>
+                <li class="page-item" th:classappend="${postStat == posts.number ? 'active' : ''}"
+                    th:each="postStat : ${#numbers.sequence(0, posts.totalPages-1)}">
+                    <a class="page-link" th:href="${'/post/?pageNo=' + postStat}">[[${postStat+1}]]</a>
+                </li>
+                <li class="page-item" th:if="${!posts.last}" th:classappend="${posts.last ? 'disabled' : ''}">
+                    <a class="page-link" th:href="${'/post/?pageNo=' + (posts.number+1)}">다음</a>
+                </li>
+            </ul>
+        </nav>
+    </nav>
+</section>
+
+
+
+<script src="/js/require/user.js"></script>
+<script src="/js/require/post.js"></script>
+</body>
+</html>

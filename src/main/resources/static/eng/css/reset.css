@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700;800");
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  background: #252525;
+  color: #ffffff;
+  /* font-family: 'Poppins'; */
+  font-family: 'Poppins', 'Noto sans KR';
+  /* font-family: 'Noto sans KR'; */
+  /* overflow-x: hidden; */
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  font-weight: bold;
+  font-size: 2rem;
+  display: block;
+  margin: 20px;
+}
+a {
+  all: unset;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:hover {
+  /* font-weight: 600; */
+  text-decoration: none;
+  /* color: #9cb2ff; */
+  cursor: pointer;
+}
+
+/* .bb {
+  border: 1px solid black;
+}
+
+.bb3 {
+  border: 3px solid black;
+}
+
+.wb3 {
+  border: 3px solid white;
+}
+
+.br {
+  border: 1px solid red;
+}
+.bor {
+  border: 1px solid orange;
+}
+.by {
+  border: 1px solid yellow;
+}
+.bg {
+  border: 1px solid green;
+} */
+
+.typo_title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+}
+.typo_subTitle {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+}
+.typo_content {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+}
+
+.typo_info_title {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.48px;
+}
+
+.typo_info_subTitle {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.8px;
+}
+.typo_info_content {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.64px;
+}
+
+.slick-arrow {
+  background: #252525 !important;
+  margin-top: 20px;
+  width: 30px!important;
+  height: 30px!important;
+  /* opacity: 0.3; */
+  border-radius: 100%;
+}
+
+.slick-prev::before {
+  content: "<" !important;
+  position: absolute;
+  font-size: 30px!important;
+  top: -4px;
+  left: 3px;
+}
+
+.slick-next::before {
+  content: ">" !important;
+  position: absolute;
+  font-size: 30px!important;
+  top: -4px;
+  right: 3px;
+}
+

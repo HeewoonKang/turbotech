@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>유저 정보 수정</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+</head>
+<body style="display:none;" id="bodyContent">
+<h1>유저 정보 수정</h1>
+<form id="user-update-form">
+    <input id="id" type="hidden">
+    <label for="username">이름:</label><br>
+    <input id="username" name="username" type="text"><br>
+    <label for="role">권한:</label><br>
+    <select id="role" name="role">
+        <option value="GENERAL">GENERAL</option>
+        <option value="RETAIL">RETAIL</option>
+        <option value="ADMIN">ADMIN</option>
+    </select><br>
+    <button class="btn btn-warning" id="btn-update">수정</button>
+</form>
+<script src="/js/require/admin.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        var id = window.location.pathname.split('/').pop();
+        $.ajax({
+            url: '/api/admin/usermanage/' + id,
+            type: 'GET',
+            success: function(user) {
+                $('#id').val(user.id);
+                $('#username').val(user.username);
+                $('#role').val(user.role);
+            },
+            error: function(error) {
+                console.error('에러 처리 in updateUser:', error);
+            }
+        });
+    });
+</script>
+</body>
+</html>

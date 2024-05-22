@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<head>
+    <title>인덱스</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        .pagination li {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>인덱스 페이지</h1>
+<div id="authLink">
+    <a href="/user/login">Login</a> | <a href="/user/signUp">Sign Up</a>
+</div>
+<section class="py-5">
+    <nav>
+        <form id="searchForm">
+            <input id="searchInput" placeholder="게시글 이름 검색" type="text">
+            <input type="submit" value="검색">
+        </form>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+            </tr>
+            </thead>
+            <tbody id="postList"></tbody> <!-- 게시글 목록 3줄로 여기 들어갈 것. -->
+        </table>
+        <nav>
+            <ul class="pagination" id="pagination"></ul> <!--페이징 버튼 여기 들어갈 것-->
+        </nav>
+    </nav>
+</section>
+<script src="/js/require/user.js"></script>
+<script src="/js/require/post.js"></script>
+<script>
+    $(document).ready(function() {
+        var page = 0;  // 페이지 번호
+        var size = 3;  // 페이지당 게시글 수
+
+        // 페이징 함수
+        function createPagination(page, totalPages) {
+            var pagination = $('#pagination');
+            pagination.empty(); // 이전에 띄워져있던 페이징 버튼들 삭제, 동적으로 값을 띄워주기 위해 사용.
+
+            // 이전 페이지 버튼
+            if (page > 0) {
+                pagination.append('<li class="page-item"><a class="page-link" href="#" data-page="' + (page - 1) + '">이전</a></li>');
+            } else {
+                pagination.append('<li class="page-item disabled"><a class="page-link" href="#">이전</a></li>');
+            }
+
+            // 페이지 번호 나열
+            for (var i = 0; i < totalPages; i++) {
+                if (i == page) {
+                    pagination.append('<li class="page-item active"><a class="page-link" href="#" data-page="' + i + '">' + (i + 1) + '</a></li>');
+                } else {
+                    pagination.append('<li class="page-item"><a class="page-link" href="#" data-page="' + i + '">' + (i + 1) + '</a></li>');
+                }
+            }
+
+            // 다음 페이지 버튼
+            if (page < totalPages - 1) {
+                pagination.append('<li class="page-item"><a class="page-link" href="#" data-page="' + (page + 1) + '">다음</a></li>');
+            } else {
+                pagination.append('<li class="page-item disabled"><a class="page-link" href="#">다음</a></li>');
+            }
+
+            // 페이지번호 클릭시 해당 페이지 게시글 목록 출력
+            $('.page-link').click(function(e) {
+                e.preventDefault();
+                page = $(this).data('page');  // 페이지 번호 값 등록
+                getPosts(page, size);  // 해당 페이지에 대한 게시글 목록 가져오기 함수 호출
+            });
+        }
+
+        // 게시글 목록 출력 함수
+        function getPosts(page, size) {
+            $.ajax({
+                url: '/api/post/list/?page=' + page + '&size=' + size,
+                type: 'GET',
+                success: function(data) {
+                    var posts = data.content;
+                    var tbody = $('table > tbody');
+                    tbody.empty();  // 기존 게시글 목록 삭제, 동적으로 값을 띄워주기 위해 사용.
+                    posts.forEach(function(post) {
+                        var row = '<tr>' +
+                            '    <td>' + post.id + '</td>' +
+                            '    <td>' + post.title + '</td>' +
+                            '    <td>' + post.user.nickName + '</td>' +
+                            '    <td><a href="/post/' + post.id + '">상세보기</a></td>' +
+                            '</tr>';
+                        tbody.append(row);
+                    });
+                    createPagination(page, data.totalPages);  // 페이징버튼들 생성
+                }
+            });
+        }
+
+        // 게시글 검색 함수
+        $('#searchForm').submit(function(e) {
+            e.preventDefault();
+            var searchKeyword = $('#searchInput').val();
+            $.ajax({
+                url: '/api/post/search?title=' + searchKeyword + '&page=' + page + '&size=' + size,
+                type: 'GET',
+                success: function(data) {
+                    var posts = data.content;
+                    var tbody = $('table > tbody');
+                    tbody.empty();
+                    posts.forEach(function(post) {
+                        var row = '<tr>' +
+                            '    <td>' + post.id + '</td>' +
+                            '    <td>' + post.title + '</td>' +
+                            '    <td>' + post.user.nickName + '</td>' +
+                            '    <td><a href="/post/' + post.id + '">상세보기</a></td>' +
+                            '</tr>';
+                        tbody.append(row);
+                    });
+                    createPagination(page, data.totalPages);  // 페이지네이션 생성
+                }
+            });
+        });
+
+        // 페이지 로딩 완료 후 게시글 목록 가져오기
+        getPosts(page, size);
+    });
+</script>
+</body>
+</html>

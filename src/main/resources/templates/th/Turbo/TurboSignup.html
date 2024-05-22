@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>주식회사 터보테크놀로지</title>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/common.css" />
+  <script
+          type="text/javascript"
+          src="/js/jquery-3.7.1.min.js"
+  ></script>
+  <link rel="stylesheet" type="text/css" href="/js/slick.css" />
+  <link
+          rel="stylesheet"
+          type="text/css"
+          href="/js/slick-theme.css"
+  />
+  <script type="text/javascript" src="/js/slick.min.js"></script>
+  <script type="text/javascript" src="/js/video.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".section-productList-wrap").slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false,
+        variableWidth: true,
+      });
+    });
+  </script>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="header-main-container br">
+      <div class="header-main-wrap bor">
+        <a href="/">
+          <img
+                  src="/images/logo/TT_logo.png"
+                  alt="logo"
+                  class="header-main-logo by"
+          />
+        </a>
+
+        <ul class="header-main-menu by">
+          <li><a href="/html/company/company.html">회사소개</a></li>
+          <li><a href="/html/coretech/coretech.html">핵심기술</a></li>
+          <li><a href="/html/product/product.html">제품소개</a></li>
+          <li>
+            <a href="/html/energysave/energysave.html"
+            >에너지 절감 주요 적용 사업</a
+            >
+          </li>
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+          <li>
+            <a href="/membership/DealerAgent">멤버쉽서비스</a>
+          </li>
+        </ul>
+
+        <div class="header-main-login">
+          <a href="/user/login">LOGIN</a>
+          <p>|</p>
+          <div class="header-main-lang">
+            <p>KR</p>
+            <img
+                    src="/images/icon/arrow_under.png"
+                    alt="language"
+                    width="8px"
+                    height="6px"
+            />
+          </div>
+        </div>
+        <div class="mobile-header-menu">
+          <span class="mobile-header-menu-bar mobile-header-menu-bar--top"></span>
+          <span class="mobile-header-menu-bar mobile-header-menu-bar--mid"></span>
+          <span class="mobile-header-menu-bar mobile-header-menu-bar--bot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="header-sub-container br">
+      <div class="header-sub-wrap bor">
+        <ul class="header-sub-menu by">
+          <li><a href="ceo.html">CEO 인사말</a></li>
+          <li>
+            <a href="companyinfo.html">회사소개</a>
+          </li>
+          <li><a href="people.html">조직도</a></li>
+        </ul>
+      </div>
+    </div> -->
+  </header>
+
+  <section class="wb3">
+    <div class="section-company-container br">
+      <div class="section-company-wrap bor">
+        <div class="signup-tabs">
+          <div class="signup-tab active" data-tab="tab1">약관동의</div>
+          <div class="signup-tab" data-tab="tab2">정보입력</div>
+          <div class="signup-tab" data-tab="tab3">약관동의</div>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane active" id="tab1">
+            <form>
+              <p class="tab1-title">
+                회원가입약관 및 개인정보처리방침 안내의 내용에 동의하셔야
+                회원가입 하실 수 있습니다.
+              </p>
+              <div class="tab1-info">
+                <p class="tab1-info-title">회원 이용약관</p>
+                <div class="tab1-info-content">
+                  본 약관은 Turbowin Co,, Ltd (이하 Turbowin") 가 운영하는
+                  www.turbowin.com를 이용함에 있어 Turbowin 이용자의 권리,
+                  의무, <br />
+                  책임사항 및 기타 필요한 사항을 규정하는데 적용됩니다.<br />
+                  이용자가 되고자 하는 자가 Turbowin이 정한 소정의 절차를
+                  거쳐서 " 회원가입 " 단추를 누르면 본 약관에 동의하는
+                  것으로 간주합니다.<br />
+                  본 약관은 2022년 3월 1일 부터 적용합니다. 회원 등록 말소를
+                  원하는 이용자는 Turbovin의 소정 약관의 절차에 따라 회원
+                  탈퇴를 신청합니다.<br />
+                </div>
+                <div class="tab1-info-checkbox">
+                  <input type="checkbox" id="checkbox1" />
+                  <label for="checkbox1"
+                  >회원가입의 내용에 동의합니다.</label
+                  >
+                </div>
+              </div>
+              <div class="tab1-info">
+                <p class="tab1-info-title">개인정보처리 방침 안내</p>
+                <div class="tab1-info-content">
+                  본 약관은 Turbowin Co,, Ltd (이하 Turbowin") 가 운영하는
+                  www.turbowin.com를 이용함에 있어 Turbowin 이용자의 권리,
+                  의무, <br />
+                  책임사항 및 기타 필요한 사항을 규정하는데 적용됩니다.<br />
+                  이용자가 되고자 하는 자가 Turbowin이 정한 소정의 절차를
+                  거쳐서 " 회원가입 " 단추를 누르면 본 약관에 동의하는
+                  것으로 간주합니다.<br />
+                  본 약관은 2022년 3월 1일 부터 적용합니다. 회원 등록 말소를
+                  원하는 이용자는 Turbovin의 소정 약관의 절차에 따라 회원
+                  탈퇴를 신청합니다.<br />
+                </div>
+                <div class="tab1-info-checkbox">
+                  <input type="checkbox" id="checkbox2" />
+                  <label for="checkbox2"
+                  >회원가입의 내용에 동의합니다.</label
+                  >
+                </div>
+              </div>
+            </form>
+            <button class="signup_first" id="signup_first">회원가입</button>
+          </div>
+          <div class="tab-pane" id="tab2">
+            <form id= "signupForm" action="#">
+              <div class="signup-form-group">
+                <input type="radio" id="option1" name="option" value="GENERAL" />
+                <label for="option1">일반</label>
+                <input type="radio" id="option2" name="option" value="RETAIL" />
+                <label for="option2">대리점</label>
+              </div>
+
+              <div class="signup-form-group">
+                    <span style="width: 50%">
+                      <input
+                              type="text"
+                              id="username"
+                              name="username"
+                              placeholder="아이디를 입력하세요"
+                              class="normal-input"
+                      />
+                      <button type="button" id="checkUsername" class="black_button">중복확인</button>
+                    </span>
+                <p>
+                  - 알파벳 문자, 숫자, _만 입력할 수 있습니다. 2자 이상을
+                  입력하세요.
+                </p>
+              </div>
+
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="password"
+                              id="password"
+                              name="password"
+                              placeholder="비밀번호를 입력하세요"
+                              class="normal-input"
+                      />
+                    </span>
+                <p>
+                  - 비밀번호에는 숫자, 특수 문자 및 영어가 포함되어야
+                  합니다. (10자 이상)
+                </p>
+              </div>
+
+              <div class="signup-form-group" style="margin-bottom: 64px">
+                    <span>
+                      <input
+                              type="password"
+                              id="confirmPassword"
+                              name="password-confirm"
+                              placeholder="비밀번호를 다시 입력하세요"
+                              class="normal-input"
+                      />
+                    </span>
+                <p id="passwordMatch"></p>
+              </div>
+
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="text"
+                              id="nickName"
+                              name="nickName"
+                              placeholder="호칭"
+                              class="normal-input"
+                      />
+                    </span>
+              </div>
+
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="text"
+                              id="familyName"
+                              name="familyName"
+                              placeholder="성"
+                              class="normal-input"
+                              style="width: 50%"
+                      />
+                      <input
+                              type="text"
+                              id="name"
+                              name="name"
+                              placeholder="이름"
+                              class="normal-input"
+                              style="width: 50%"
+                      />
+                    </span>
+              </div>
+
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="text"
+                              id="birth"
+                              name="birth"
+                              placeholder="생년월일"
+                              class="normal-input"
+                      />
+                    </span>
+              </div>
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="text"
+                              id="email"
+                              name="email"
+                              placeholder="이메일"
+                              class="normal-input"
+                      />
+                    </span>
+              </div>
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="text"
+                              id="region"
+                              name="region"
+                              placeholder="국가"
+                              class="normal-input"
+                      />
+                    </span>
+              </div>
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="text"
+                              id="contact"
+                              name="contact"
+                              placeholder="연락처 / 예시: 010-1234-5678"
+                              class="normal-input"
+                      />
+                    </span>
+              </div>
+              <div class="signup-form-group" style="margin-bottom: 64px">
+                    <span>
+                      <input
+                              type="text"
+                              id="etcContact"
+                              name="etcContact"
+                              placeholder="기타 연락처"
+                              class="normal-input"
+                      />
+                    </span>
+                <p>- 예시 : 위챗/turbotechnology123</p>
+              </div>
+
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="text"
+                              id="postcode"
+                              name="post"
+                              placeholder="우편번호"
+                              class="normal-input"
+                      />
+                    </span>
+              </div>
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="text"
+                              id="county"
+                              name="county"
+                              placeholder="주/도/지역"
+                              class="normal-input"
+                      />
+                    </span>
+              </div>
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="text"
+                              id="city"
+                              name="city"
+                              placeholder="도시"
+                              class="normal-input"
+                      />
+                    </span>
+              </div>
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="text"
+                              id="address"
+                              name="address"
+                              placeholder="거리 및 번호, 사서함, c/o"
+                              class="normal-input"
+                      />
+                    </span>
+              </div>
+              <div class="signup-form-group">
+                    <span>
+                      <input
+                              type="text"
+                              id="etcAddress"
+                              name="etcAddress"
+                              placeholder="아파트, 방, 호수, 빌딩 등"
+                              class="normal-input"
+                      />
+                    </span>
+              </div>
+
+              <div class="signup-form-group" style="margin-bottom: 64px">
+                    <span style="width: 50%">
+                      <input
+                              type="text"
+                              id="serialNumber"
+                              name="serialNumber"
+                              placeholder="시리얼 넘버"
+                              class="normal-input"
+                      />
+                      <button class="black_button">번호체크</button>
+                    </span>
+                <p>- 구입한 장비의 명판을 확인합니다.</p>
+              </div>
+
+              <div
+                      style="display: flex; justify-content: center; gap: 10px"
+              >
+                <button type="button" class="signup_first" onclick="handleSignup()">회원가입</button>
+                <button class="signup_second">취소</button>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane" id="tab3">
+            <form>내용 필요</form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="">
+    <div class="footer-container br">
+      <div class="footer-wrap br">
+        <div class="footer-up">
+              <span class="footer-info">
+                <p style="color: white">개인정보처리방침</p>
+                <p>|</p>
+                <p>이용약관</p>
+              </span>
+          <span
+          ><p class="footer">
+                  Copyright © 2023 Turbo Technology Co., LTD. All Rights
+                  Reserved.
+                </p></span
+          >
+        </div>
+        <div class="footer-down">
+          <p class="footer">
+            Address - 경기 화성시 동탄대로21길 10, 더퍼스트타워1차 501호
+          </p>
+          <p>Tel - 031-374-0804</p>
+          <p>Fax - 031-374-0803</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <nav class="side-bar off">
+    <div class="side-bar-login-section">
+      <a href="">Login</a>
+    </div>
+    <div class="side-bar-lang-section">
+      <span>KOR</span>
+      <span>ENG</span>
+      <span>CHN</span>
+    </div>
+    <div class="side-bar-sub-section">
+      <div>
+        <p><a href="/html/company/company.html">회사소개</a></p>
+        <ul>
+          <li>
+            <a href="/html/company/ceo.html">CEO 인사말</a>
+          </li>
+          <li>
+            <a href="/html/company/companyinfo.html">회사소개</a>
+          </li>
+          <li>
+            <a href="/html/company/people.html">조직도</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p><a href="/html/coretech/coretech.html">핵심기술</a></p>
+        <ul>
+          <li>
+            <a href="/html/coretech/uhepmmotor.html">UHEPM Motor</a>
+          </li>
+          <li>
+            <a href="/html/coretech/nbwairfoilbearing.html">NBW Air Foil Bearing</a>
+          </li>
+          <li>
+            <a href="/html/coretech/supersonicimpeller.html">Supersonic Impeller</a>
+          </li>
+          <li>
+            <a href="/html/coretech/dualaircoolingsystem.html">Dual Air Cooling System</a>
+          </li>
+          <li>
+            <a href="/html/coretech/autosurgeprotectionsystem.html">Auto Surge Protection System</a>
+          </li>
+          <li>
+            <a href="/html/coretech/internalcoolingairsystem.html">Internal Cooling Air System</a>
+          </li>
+          <li>
+            <a href="/html/coretech/anti-explosiveturbomotor.html">Anti-Explosive Turbo Motor</a>
+          </li>
+          <li>
+            <a href="/html/coretech/ambientlighting.html">Ambient Lighting</a>
+          </li>
+          <li>
+            <a href="/html/coretech/smarthmi.html">SMART HMI</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p><a href="/html/product/product.html">제품소개</a></p>
+        <ul>
+          <li>
+            <a href="/html/product/WH-SERIES.html">WH Series 터보 컴프레서</a>
+          </li>
+          <li>
+            <a href="/html/product/WL-SERIES.html">WL Series 터보 블로워</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p><a href="/html/energysave/energysave.html"> 에너지 절감 주요 적용 사업</a></p>
+        <ul>
+          <li>
+            <a href="/html/energysave/2차전지.html">2차전지</a>
+          </li>
+          <li>
+            <a href="/html/energysave/바이오케미컬.html">바이오케미컬</a>
+          </li>
+          <li>
+            <a href="/html/energysave/반도체디스플레이.html">반도체디스플레이</a>
+          </li>
+          <li>
+            <a href="/html/energysave/석유화학.html">석유화학</a>
+          </li>
+          <li>
+            <a href="/html/energysave/식음료.html">식음료</a>
+          </li>
+          <li>
+            <a href="/html/energysave/양조발효.html">양조발효</a>
+          </li>
+          <li>
+            <a href="/html/energysave/수처리환경.html">수처리/환경</a>
+          </li>
+          <li>
+            <a href="/html/energysave/발전.html">발전</a>
+          </li>
+          <li>
+            <a href="/html/energysave/금속제강제련.html">금속/제강/제련</a>
+          </li>
+          <li>
+            <a href="/html/energysave/조선선박.html">조선선박</a>
+          </li>
+          <li>
+            <a href="/html/energysave/광업.html">광업</a>
+          </li>
+          <li>
+            <a href="/html/energysave/시멘트분말분체.html">시멘트/분말/분체업</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p><a href="/contact">Contact</a></p>
+        <ul>
+          <li>
+            <a href="/contact">견적문의</a>
+          </li>
+          <li>
+            <a href="/html/contact/query_normal.html">일반문의</a>
+          </li>
+          <li>
+            <a href="/html/contact/location.html">위치</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p><a href="/membership/DealerAgent">멤버쉽서비스</a></p>
+        <ul>
+          <li>
+            <a href="/membership/DealerAgent">딜러/에이전트 서비스 비디오</a>
+          </li>
+          <li>
+            <a href="/membership/Video">고객서비스비디오</a>
+          </li>
+          <li>
+            <a href="/membership/Gallery">갤러리</a>
+          </li>
+          <li>
+            <a href="/membership/Media">미디어</a>
+          </li>
+          <li>
+            <a href="/membership/Newsletter">뉴스레터</a>
+          </li>
+          <li id="adminSideTab" style="display: none;">
+            <a href="/membership/Admin">유저 관리</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+</body>
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    $(".mobile-header-menu").click(function () {
+      if ($(this).hasClass("on")) {
+        $(this).removeClass("on");
+        $(".mobile-header-menu-bar--mid").show(300);
+        $(".mobile-header-menu-bar--top").removeClass("on");
+        $(".mobile-header-menu-bar--bot").removeClass("on");
+        $("body").removeClass("off");
+        $(".side-bar").addClass("off");
+      } else {
+        $(this).addClass("on");
+        $(".mobile-header-menu-bar--mid").hide(300);
+        $(".mobile-header-menu-bar--top").addClass("on");
+        $(".mobile-header-menu-bar--bot").addClass("on");
+
+        $("body").addClass("off");
+        $(".side-bar").removeClass("off");
+      }
+    });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var userRole = localStorage.getItem('role');
+    if (userRole === 'ADMIN') {
+      // document.getElementById('adminTab').style.display = 'list-item';
+      document.getElementById('adminSideTab').style.display = 'list-item';
+    }
+  });
+</script>
+<script>
+  const tabs = document.querySelectorAll(".signup-tab ");
+  const tabPanes = document.querySelectorAll(".tab-pane");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((tab) => tab.classList.remove("active"));
+      tab.classList.add("active");
+
+      tabPanes.forEach((tabPane) => tabPane.classList.remove("active"));
+      const activeTabPaneId = tab.dataset.tab;
+      document.getElementById(activeTabPaneId).classList.add("active");
+    });
+  });
+</script>
+<script>
+  document.getElementById('signup_first').addEventListener('click', function() {
+    var checkbox1 = document.getElementById('checkbox1').checked;
+    var checkbox2 = document.getElementById('checkbox2').checked;
+
+    if (checkbox1 && checkbox2) {
+      document.getElementById('tab2').style.display = 'block';
+      document.getElementById('tab1').style.display = 'none';
+    } else {
+      alert('모든 약관에 동의해야 회원가입을 진행할 수 있습니다.');
+    }
+  });
+</script>
+<script>
+  $('#checkUsername').click(function() {
+    var username = $('#username').val();
+    if (username) {
+      $.ajax({
+        type: 'POST',
+        url: '/user/checkUsername',
+        contentType: 'application/json',
+        data: JSON.stringify({ username: username }),
+        dataType: 'json',
+        success: function(response) {
+          if (response.isAvailable) {
+            alert('사용 가능한 아이디입니다.');
+          } else {
+            alert('이미 존재하는 아이디입니다.');
+          }
+        },
+        error: function(error) {
+          console.error('에러에러에러에러:', error);
+        }
+      });
+    } else {
+      alert('아이디를 입력해주세요.');
+    }
+  });
+</script>
+<script>
+  $('#confirmPassword').on('input', function() {
+    var password = $('#password').val();
+    var confirmPassword = $('#confirmPassword').val();
+    var matchPassword = $('#passwordMatch');
+
+    if (password && confirmPassword && password !== confirmPassword) {
+      matchPassword.text('비밀번호가 일치하지 않습니다.').css('color', 'red');
+    } else if (password && confirmPassword && password === confirmPassword) {
+      matchPassword.text('비밀번호가 일치합니다.').css('color', 'green');
+    } else {
+      matchPassword.text('');
+    }
+  });
+</script>
+<script src="/js/require/user.js"></script>
+</html>

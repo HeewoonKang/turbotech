@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>유저 관리</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        .pagination li {
+            margin-right: 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const role = localStorage.getItem('role');
+            if (role !== 'ADMIN') {
+                window.location.href = '/';
+            }
+        });
+    </script>
+</head>
+<body>
+<h1>유저 관리</h1>
+<nav>
+    <form method="get" th:action="@{/admin/search}">
+        <input name="username" placeholder="유저 이름 검색" type="text">
+        <input type="submit" value="검색">
+    </form>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>권한</th>
+            <th>수정</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.role}"></td>
+            <td>
+                <a th:href="@{/admin/usermanage/{id}(id=${user.id})}">수정하기</a>
+            </td>
+            <td>
+                <!--<button id="btn-delete" th:data-user-delete-id="${user.id}">삭제하기</button>-->
+                <button id="btn-delete" th:data-user-delete-id="${user.id}" onclick="adminObject.deleteUser(this.getAttribute('data-user-delete-id'))">삭제하기</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <nav>
+        <ul class="pagination">
+            <li class="page-item" th:if="${!users.first}" th:classappend="${users.first ? 'disabled' : ''}">
+                <a class="page-link" th:href="${'/admin/?pageNo=' + (users.number-1)}">이전</a>
+            </li>
+            <li class="page-item" th:classappend="${userStat == users.number ? 'active' : ''}"
+                th:each="userStat : ${#numbers.sequence(0, users.totalPages-1)}">
+                <a class="page-link" th:href="${'/admin/?pageNo=' + userStat}">[[${userStat+1}]]</a>
+            </li>
+            <li class="page-item" th:if="${!users.last}" th:classappend="${users.last ? 'disabled' : ''}">
+                <a class="page-link" th:href="${'/admin/?pageNo=' + (users.number+1)}">다음</a>
+            </li>
+        </ul>
+    </nav>
+</nav>
+<script src="/js/require/admin.js"></script>
+</body>
+</html>
