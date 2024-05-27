@@ -290,6 +290,10 @@ public class WebPageController {
         return "th/Turbo/turboIndex";
     }
 
+    @GetMapping("/eng")
+    public String indexEngPage() {
+        return "/eng/Index.html";
+    }
 
 
     /*@GetMapping("/contact")

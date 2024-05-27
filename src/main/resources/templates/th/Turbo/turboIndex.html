@@ -55,8 +55,10 @@
                 </div>
                 <p>|</p>
                 <div class="header-main-lang">
-                    <p>KR</p>
-                    <img src="/images/icon/arrow_under.png" alt="language" width="8px" height="6px" />
+                    <select onchange="location = this.value">
+                        <option value="/" selected>KR</option>
+                        <option value="/eng/index.html" >ENG</option>
+                    </select>
                 </div>
             </div>
             <div class="mobile-header-menu">
@@ -328,9 +330,8 @@
             <a href="">Login</a>
         </div>
         <div class="side-bar-lang-section">
-            <span>KOR</span>
-            <span>ENG</span>
-            <span>CHN</span>
+            <span><a href="/">KOR</a></span>
+            <span><a href="/eng/index.html">ENG</a></span>
         </div>
         <div class="side-bar-sub-section">
             <div>
